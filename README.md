@@ -51,3 +51,7 @@ In pipelines, there're two ways to construct this binding:
 ### Stages:
 
 <img src="https://github.com/graadi/container-registry-purge-jenkins-pipeline/blob/main/img/pipline.png" alt="Pipeline Stages"/>
+
+### Local Docker registry
+
+The idea behing assumes that there is a Jenkins server, with Docker installed and the engine is orchestrated by the running declarative pipeline. The need of a purge came as a need to keep the disk space within a certain boundary as the registry storage tends to become a very disk space consuming component.
