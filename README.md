@@ -50,4 +50,4 @@ In pipelines, there're two ways to construct this binding:
 
 ### Stages:
 
-<img src="https://github.com/graadi/container-registry-purge-jenkins-pipeline/blob/main/images/pipeline.png" />
+<img src="https://github.com/graadi/container-registry-purge-jenkins-pipeline/blob/main/img/pipline.png" alt="Pipeline Stages"/>
