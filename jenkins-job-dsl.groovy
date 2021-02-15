@@ -1,10 +1,17 @@
 pipelineJob("Docker and Azure ACR Registry Data Purge") {
 
     description("Keep the local docker engine repository and Azure ACR registry clean of unused, old images.")
+    
+    logRotator {
+        
+        artifactDaysToKeep(0)
+        artifactNumToKeep(0)
+        daysToKeep(0)
+        numToKeep(10)
+    }
 
     parameters {
 
-        
         booleanParam('RUN_AGGREGATE_REPORT', false, 'When tru, the ACR purge command will run in dry-mode. No changes will be performed.')
         
         stringParam( "ACR_PURGE_COMMAND_TIMEOUT", "3")
@@ -30,4 +37,9 @@ pipelineJob("Docker and Azure ACR Registry Data Purge") {
             scriptPath("jenkins-pipeline.groovy")
         }
     }
+
+    triggers {
+        
+        cron("H 4 * * 0")
+    }    
 }
